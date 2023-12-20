@@ -25,6 +25,7 @@ extras_require = {
     'gssapi' : ['python-gssapi'],
     'azure' : ['azure<=4', 'msrestazure'],
     'workqueue': ['work_queue'],
+    'globus_compute': ['globus_compute_sdk'],
     'flux': ['pyyaml', 'cffi', 'jsonschema'],
     # Disabling psi-j since github direct links are not allowed by pypi
     # 'psij': ['psi-j-parsl@git+https://github.com/ExaWorks/psi-j-parsl']
