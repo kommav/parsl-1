@@ -42,7 +42,7 @@ Verify Parsl Version and Compatability w/ FuncXExec:
 - Run the command `pytest parsl/tests/ --config parsl/tests/configs/funcx.py  -k 'not cleannet' --full-trace`
     - All test cases should pass if properly configured
     - Else, consult Ved Kommalapati within Parsl and FuncX Slack Channels
-- Verify that endpoint and user side have same python version (Potential Error if not verified)
+- Verify that endpoint and user side have same python version (Error if not verified)
 ```
    File "/usr/local/lib/python3.10/site-packages/dill/_dill.py", line 805, in _create_code
      return CodeType(args[0], 0, 0, *args[1:])
