@@ -6,16 +6,6 @@ import ssl
 import pika
 import certifi
 
-# # Path to your client certificate file
-client_certfile = 'client_certificate.pem'
-
-# # Path to your client private key file
-client_keyfile = 'client_key.pem'
-
-# # Create an SSL context with certificate verification and client certificate
-context = ssl.create_default_context(cafile=certifi.where())
-context.load_cert_chain(certfile=client_certfile, keyfile=client_keyfile)
-
 # Now you have a connection to the AMQP server with SSL client certificate authentication
 
 def fresh_config():
