@@ -217,7 +217,7 @@ parsl.load(fresh_config())
 # print(3)
 # print(app_A())
 # print(app_B(2).result())
-x = time.time()
+start_time = time.time()
 # print(app_C(app_A(), app_B(2)).result())
 total = app_Z(app_D(app_A(),app_G(),app_M()),
                       app_E(5,10,15,20),
@@ -239,5 +239,6 @@ total = app_Z(app_D(app_A(),app_G(),app_M()),
                       app_B(28),
                       app_C(45, app_B(app_P(42,37,app_M()))),
                       app_M()).result()
-print(total)
-print(time.time() - x)
+print(f"Returned total: {total}")
+print(f"Total wall time for this test: {time.time() - start_time}s")
+assert total == 67410.45600966233
