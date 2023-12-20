@@ -3,8 +3,6 @@ import parsl
 from parsl import python_app
 from parsl.monitoring import MonitoringHub
 from parsl.executors.globus import GlobusExec
-import matplotlib.pyplot as plt
-import numpy as np
 
 import multiprocessing
 import os
