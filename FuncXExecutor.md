@@ -40,6 +40,7 @@ Define and Configure Globus Compute Endpoint:
 Verify Parsl Version and Compatability w/ FuncXExec:
 - Edit Pytest suite according to Pytest comments above
 - Run the command `pytest parsl/tests/ --config parsl/tests/configs/funcx.py  -k 'not cleannet' --full-trace`
+    - Ensure that you are using your own user-defined endpoint (w/ pytest installed)
     - All test cases should pass if properly configured
     - Else, consult Ved Kommalapati within Parsl and FuncX Slack Channels
 - Verify that endpoint and user side have same python version (Error if not verified)
