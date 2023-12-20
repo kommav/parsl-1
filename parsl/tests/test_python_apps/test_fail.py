@@ -3,7 +3,6 @@ import pytest
 from parsl.app.app import python_app
 from parsl.dataflow.errors import DependencyError
 
-
 class ManufacturedTestFailure(Exception):
     pass
 
@@ -14,7 +13,7 @@ def random_fail(fail_prob: float, inputs=()):
     if random.random() < fail_prob:
         raise ManufacturedTestFailure("App failure")
 
-
+@pytest.mark.local
 def test_no_deps():
     """Test basic error handling, with no dependent failures
     """

@@ -11,6 +11,7 @@ def cat(inputs=(), outputs=(), stdout=None, stderr=None):
 
 
 @pytest.mark.staging_required
+@pytest.mark.local
 def test_files(setup_data):
     fs = sorted(setup_data / f for f in setup_data.iterdir())
     fs = list(map(File, fs))
@@ -19,8 +20,7 @@ def test_files(setup_data):
         outputs=[File(setup_data / "cat_out.txt")],
         stdout=setup_data / "f_app.out",
         stderr=setup_data / "f_app.err",
-    )
-    x.result()
+    ).result()
     d_x = x.outputs[0]
     data = open(d_x.filepath).read().strip()
     assert "1\n2" == data, "Per setup_data fixture"
@@ -35,6 +35,7 @@ def increment(inputs=(), outputs=(), stdout=None, stderr=None):
 
 
 @pytest.mark.staging_required
+@pytest.mark.local
 def test_increment(tmp_path, depth=5):
     """Test simple pipeline A->B...->N"""
     # Test setup
